@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var wins = 0;
+        var losses = 0;
+        
+        while(true){
+            
+        let userinput = prompt("Enter one among Stone paper or scissors else quit ");
+        console.log("uservalue is " + userinput);
+        
+            if(userinput == "quit"){
+            break;
+            }
+    // randomly operating opponents move
+
+        var random = Math.floor((Math.random()*3));
+        console.log(random)
+        var cgi = ``;
+            if(random==0){
+                var cgi = "paper";
+            }else if (random==1){
+                var cgi = "stone";
+            }else{
+                var cgi = "scissors";
+            }
+        console.log("Systemvalue is " + cgi);
+
+            if (userinput != "stone" && userinput != "paper" && userinput != "scissors") {
+            console.log("Wrong Choice... Try Again.")
+            
+        }
+
+    //won or lose
+            if(userinput == cgi){
+                console.log("Tied")
+            }else if(userinput == "stone" && cgi == "scissors" || userinput == "scissors" && cgi == "paper" || userinput == "paper" && cgi == "stone" ){
+                console.log("Congratulations... YOU Won")
+                wins++;
+            }else{
+                console.log("System Won")
+                losses++;
+            }
+            
+          
+        console.log (`you have win  + ${wins}`)
+        console.log (`you have lose  + ${losses}`)
+        }
+
+        confirm ("Thanks For Playing the Game, Click OK to quit")
+
+
+        
+
+          
+    </script>
+</body>
+</html>
